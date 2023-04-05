@@ -37,6 +37,38 @@ class IndexPage extends React.Component {
         });
     }
 
+    // Sort
+    sortName = () => {
+        const strAscending = [...this.state.number].sort((a, b) =>
+            a.fullname > b.fullname ? 1 : -1,
+        );
+        this.setState({ number: strAscending })
+    }
+    sortEmail = () => {
+        const strAscending = [...this.state.number].sort((a, b) =>
+            a.email > b.email ? 1 : -1,
+        );
+        this.setState({ number: strAscending })
+    }
+    sortManager = () => {
+        const strAscending = [...this.state.number].sort((a, b) =>
+            a.manager > b.manager ? 1 : -1,
+        );
+        this.setState({ number: strAscending })
+    }
+    sortPosition = () => {
+        const strAscending = [...this.state.number].sort((a, b) =>
+            a.position > b.position ? 1 : -1,
+        );
+        this.setState({ number: strAscending })
+    }
+    sortDate = () => {
+        const strAscending = [...this.state.number].sort((a, b) =>
+            a.date_admission > b.date_admission ? 1 : -1,
+        );
+        this.setState({ number: strAscending })
+    }
+
     render () {
         return (
                 <div class="hero-unit">
@@ -61,11 +93,11 @@ class IndexPage extends React.Component {
                     </div>
                     <hr />
                     <div class="row">
-                            <div class="span2">Full name</div>
-                            <div class="span1">Position</div>
-                            <div class="span2">Date admisiion</div>
-                            <div class="span2">Email</div>
-                            <div class="span3">Manager</div>
+                            <div class="span2"><a style={{cursor:'pointer'}} onClick={this.sortName}>Full name</a></div>
+                            <div class="span1"><a style={{cursor:'pointer'}} onClick={this.sortPosition}>Position</a></div>
+                            <div class="span2"><a style={{cursor:'pointer'}} onClick={this.sortDate}>Date admisiion</a></div>
+                            <div class="span2"><a style={{cursor:'pointer'}} onClick={this.sortEmail}>Email</a></div>
+                            <div class="span3"><a style={{cursor:'pointer'}} onClick={this.sortManager}>Manager</a></div>
                             
                     </div>
                     <hr />

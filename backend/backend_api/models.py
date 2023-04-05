@@ -17,7 +17,7 @@ class Positions(models.Model):
     manager = models.OneToOneField('self', on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
-        return self.position
+        return f'{self.id} Lv. - {self.position}'
 
 
 class Staff(models.Model):
