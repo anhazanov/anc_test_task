@@ -17,3 +17,5 @@ Frontend technologies:
 - Bootstrap Twitter
 - CSS
 - HTML
+
+![start page](https://github.com/anhazanov/anc_test_task/blob/master/backend/frontend/static/frontend/img/frontend.png)
