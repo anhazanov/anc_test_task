@@ -8,6 +8,8 @@ Backend technologies:
 - Django Seed
 - Django Debug Toolbar
 - PostgreSQL
+- Docker
+- Docker Compose
 - other
 
 Frontend technologies:
