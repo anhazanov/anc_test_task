@@ -1,0 +1,34 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+    <div class="hero-unit">
+        {% if request.user.is_authenticated %}
+            <h2>You already Log IN</h2>
+            <p>Click <a href="{% url 'crud' %}">here</a></p>
+        {% else %}
+            <form method="post" class="well form-inline">
+                {% csrf_token %}
+                <fieldset>
+                    {% for f in form %}
+                <div class="field">
+                    <label class="input-small" for="{{ f.id_for_label }}">{{ f.label }}</label>
+                    {{ f }}
+                </div>
+                    {% endfor %}
+                <div class="field">
+                    <label class="label_field hidden">hidden label</label>
+                    <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
+                    <a class="forgot" href="">Forgotten Password?</a>
+                </div>
+                <div class="field margin_0">
+                    <label class="label_field hidden">hidden label</label>
+                    <button class="main_bt">Sing In</button>
+                </div>
+                </fieldset>
+            </form>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}

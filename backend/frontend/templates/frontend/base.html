@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANC test task</title>
+    <!-- Bootstrap -->
+    <link href="{% static 'frontend/css/bootstrap.css' %}" rel="stylesheet">
+    <!-- -- React + Axios -- -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script> 
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="{% url 'index' %}">ANC test task</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'crud' %}">CRUD staff</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="container">
+        <hr />
+        <footer>
+            <p>&copy; Company 2023</p>
+        </footer>
+    </div>
+</body>
+</html>
