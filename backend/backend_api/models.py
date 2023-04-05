@@ -25,7 +25,7 @@ class Staff(models.Model):
     position = models.ForeignKey(Positions, on_delete=models.PROTECT)
     date_admission = models.DateField(default=generate_date())
     email = models.EmailField(max_length=255)
-    manager = models.ForeignKey('self', on_delete=models.CASCADE)
+    manager = models.ForeignKey('self', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f'{self.fullname} - {self.position}'
