@@ -8,7 +8,7 @@ from .models import Staff, Positions
 
 
 class StaffViewSet(ModelViewSet):
-    queryset = Staff.objects.all().select_related('position')
+    queryset = Staff.objects.all().select_related('position').select_related('manager')
     serializer_class = StaffSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
